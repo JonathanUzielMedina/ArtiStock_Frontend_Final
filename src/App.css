@@ -1,0 +1,16 @@
+#root {
+  margin: 0;
+  padding: 0;
+  background-color: #3B3F41;
+}
+
+#polit {
+  color: #86CECB
+}
+
+#button {
+  background-color: #137A7F;
+  color: #F1F1F1;
+  font-size: 20px;
+  font-weight: bolder;
+}
