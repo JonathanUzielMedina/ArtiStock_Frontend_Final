@@ -30,7 +30,7 @@ function Header(){
                                             <Link to="/users" className="nav-link text-dark"> Artistas</Link>
                                         </li>
                                         <li className="nav-item active mx-3">
-                                            <Link to="/products" className="nav-link text-dark text-center">Mis Productos</Link>
+                                            <Link to="/products" className="nav-link text-dark text-center">Productos</Link>
                                         </li>
                                         <li className="nav-item active mx-3">
                                             <Link to="/graph" className="nav-link text-dark">Gráficas</Link>
