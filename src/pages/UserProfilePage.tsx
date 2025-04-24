@@ -3,7 +3,6 @@ import { User } from "my-types";
 import { useState, useEffect } from "react";
 import { getUserById, deleteUser } from "../api/UserAPI";
 import "../style_ap.css";
-import imgPerfil from "../../public/media/perfil.png"
 import { useParams } from "react-router";
 
 interface Props {}
@@ -48,7 +47,7 @@ const UserProfilePage = (_props: Props) => {
           <div className="inline-flex justify-content-center my-5 producto rounded p-md-4 p-sm-3">
             <div className="row">
                 <div className="col-sm-6 col-md-5 text-center align-content-center">
-                  <img src={imgPerfil} className="ps-lg-5 img-fluid" width="250px"
+                  <img src={user?.profilePic} className="ps-lg-5 img-fluid" height="250px"
                       alt={`Foto de Perfil de ${user?.name}`}/>
                 </div>
                 <div className="col-sm-6 col-md-7">

@@ -63,7 +63,9 @@ const ModifyUserPage = (_props: Props) => {
                     <div className="col-md-6">
                         <label className="form-label">Insertar Imagen</label>
                         <input type="file" value={""} name="profilePicSRC"
-                        className="form-control mb-3" onChange={(e) => setUser({...user!, profilePic: e.target.value})}/>
+                        className="form-control mb-3" onChange={(e) => {
+                            const imageName = e.target.value.replace("C:\\fakepath\\", "../../public/media/");
+                            setUser({ ...user!, profilePic: imageName });}}/>
                     </div>
                 </div>
                 

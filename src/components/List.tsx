@@ -14,7 +14,7 @@ export default function List({ products, onDelete }: ListProps) {
         <div key={index} className="d-flex producto mx-4 mb-4 p-3 rounded">
           <img src={producto.image}
             alt={producto.title}
-            className="img-fluid" width="400px" />
+            className="img-fluid" style={{height: 350}} />
           <div className="flex-grow-1 d-flex flex-column justify-content-between ps-3">
             <h2 className="mt-3">
               <Link to ={`/product/${producto.id}`} className="link">
