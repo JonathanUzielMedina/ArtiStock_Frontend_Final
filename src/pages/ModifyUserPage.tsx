@@ -17,13 +17,20 @@ const ModifyUserPage = (_props: Props) => {
         getUserById(parseInt(id!.toString())).then((data:any) => setUser(data));
     }, []);
 
+    if (!user) return;
+
     const updateSubmit = async() => {
-        updateUser(parseInt(id!.toString()), user)
+        try{
+            updateUser(parseInt(id!.toString()), user);
+            alert("El usuario se ha actualizado con éxito.");
+        }catch{
+            alert("No se logró actualizar el usuario.");
+        }
    }
 
     return (
         <div className="container pb-3 pt-5">
-            <h1 className="text-center mb-3 title">Modificar Perfil del Usuario</h1>
+            <h1 className="text-center mb-3 title">Modificar Perfil</h1>
             
             <form id="formProducto" onSubmit={updateSubmit}>
                 <div className="row">

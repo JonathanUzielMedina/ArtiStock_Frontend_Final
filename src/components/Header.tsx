@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import logo from "../media/logo_ph.png";
+import logo from "../../public/media/logo_ph.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faCircleUser,faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,7 +9,7 @@ function Header(){
             <div className="container-fluid">
                 <div id="header_bar" className="row d-flex align-items-center justify-content-between w-100 top-0 start-0 gx-0">
                     <div id="logo" className="col-md-2 d-flex justify-content-center"> 
-                        <img src={logo} alt="Logo" className="img-fluid" />
+                        <img src={logo} alt="Logo" className="img-fluid"/>
                     </div>
                     <div className="col-12 col-md-8">
                         <div className="row">
@@ -27,7 +27,7 @@ function Header(){
                                 <div className="container justify-content-center">
                                     <ul className="navbar-nav">
                                         <li className="nav-item active mx-3">
-                                            <Link to="/users" className="nav-link text-dark"> Artistas</Link>
+                                            <Link to="/artists" className="nav-link text-dark"> Artistas</Link>
                                         </li>
                                         <li className="nav-item active mx-3">
                                             <Link to="/products" className="nav-link text-dark text-center">Productos</Link>
@@ -42,7 +42,7 @@ function Header(){
                     </div>
                     <div className="header_right col-md-2 d-flex justify-content-center">
                         <Link to="#" id="Lista de Compras" className="p-2 mx-1"><FontAwesomeIcon icon={faBagShopping} size="4x" style={{color:"#137A7F"}} /></Link>
-                        <Link to="#" id="perfil" className="p-2 mx-1"><FontAwesomeIcon icon={faCircleUser} size="4x" style={{color:"#137A7F"}} /></Link>
+                        <Link to="/user/:id" id="perfil" className="p-2 mx-1"><FontAwesomeIcon icon={faCircleUser} size="4x" style={{color:"#137A7F"}} /></Link>
                     </div>
                 </div>
             </div>
