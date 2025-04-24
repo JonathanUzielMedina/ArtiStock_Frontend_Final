@@ -1,5 +1,6 @@
-import { Product} from "my-types";
+import { Product, User } from "my-types";
 import { getProductsByUserId, deleteProduct } from "../api/ProductAPI";
+import { getUserNameById } from "../api/UserAPI";
 import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
 import List from "../components/List";
@@ -12,6 +13,7 @@ const ProductByAuthor = (_props: Props) => {
 
   const [products, setProducts] = useState<Product[]>([]);
   const [name, setName] = useState<string>("");
+  const [userName, setUserName] = useState<User>();
 
   const filteredProducts = products.filter((product) => {
     return (
@@ -28,6 +30,16 @@ const ProductByAuthor = (_props: Props) => {
             setProducts(data);
           } else {
             setProducts([]);
+          }
+        })
+        .catch(console.error);
+      
+      getUserNameById(parseInt(userId))
+        .then((data) => {
+          if (data) {
+            setUserName(data);
+          } else {
+            setUserName(undefined);
           }
         })
         .catch(console.error);
@@ -49,7 +61,7 @@ const ProductByAuthor = (_props: Props) => {
           
             <div className="px-4 py-2 border-b-slate-400 border-b-2">
               <div className="d-flex justify-content-center align-content-center">
-              <h1 className="text-lg font-medium title">Productos de alguien</h1>
+              <h1 className="text-lg font-medium title">Productos de {userName?.name}</h1>
               </div>
               <div className="d-flex justify-content-end pt-2">
               <button id="button" className="btn " onClick={() => (window.location.href = "/add-product/")}>

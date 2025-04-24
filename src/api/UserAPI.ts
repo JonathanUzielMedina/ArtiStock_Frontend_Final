@@ -63,3 +63,14 @@ export const getAllUsersBasic = async() => {
         return [];
     }
 }
+
+export const getUserNameById = async(id: number) => {
+    try {
+        const res = await api.get(`/user/username/${id}`);
+        const username: User = await res.data.payload;
+        return username;
+    } catch(e) {
+        console.log("Error al obtener todos los usuarios: ", e);
+        return [];
+    }
+}
