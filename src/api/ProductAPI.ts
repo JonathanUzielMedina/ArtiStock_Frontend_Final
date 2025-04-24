@@ -35,7 +35,7 @@ export const updateProduct = async(id: number, _prop: Product | undefined): Prom
 }
 
 // Crear un producto.
-export const createProduct = async (product: Product) => {
+export const createProduct = async (product: any) => {
     try {
         await api.post("/product", product);
     } catch (e) {
@@ -65,7 +65,7 @@ export const getAllProductsGraph = async () => {
   };
 
 
-  // Obtener datos de productos de un solo usuario
+  // Obtener datos de productos de un solo usuario.
 export const getProductsByUserId = async (userId:number) => {
     try {
       const res = await api.get(`/product/userId/${userId}`);

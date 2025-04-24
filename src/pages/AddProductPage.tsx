@@ -3,6 +3,10 @@ import { createProduct } from '../api/ProductAPI';
 import { createTag } from '../api/CategoryAPI';
 import { Product, Tag } from 'my-types';
 
+interface ProductToSend extends Omit<Product, 'tags'> {
+    tags: number[];
+  }
+
 const AddProductPage = () => {
     const [product, setProduct] = useState<Product>({
         id: 0,
@@ -19,19 +23,23 @@ const AddProductPage = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
+            let tagIds: number[] = [];
             for (let i = 0; i < product!.tags.length; i++) {
                 try {
-                    await createTag({ name: product!.tags[i].name });
+                    const newTag =  await createTag({ name: product!.tags[i].name });
+                    tagIds.push(newTag.payload.id);
                 } catch (error) {
                     console.warn(`Error creando tag: ${product?.tags[i].name}`, error);
                 }
             }
-            console.log("Producto a enviar:", product);
-            await createProduct(product);
-            alert("Producto agregado con éxito");
+            const productToSend: ProductToSend = {...product, tags: tagIds};
+            console.log("Producto que se enviará:", productToSend);
+            await createProduct(productToSend as any);
+            alert("Producto creado con éxito");
+            window.location.reload();
         } catch (error) {
             console.error("Error al crear el producto:", error);
-            alert("Producto creado con éxito");
+            alert("Error al crear producto");
         }
     };
 
@@ -108,7 +116,10 @@ const AddProductPage = () => {
                         <input
                             type="file"
                             name="imgSRC"
-                            onChange={(e) => setProduct({ ...product!, image: e.target.value })}
+                            onChange={(e) => {
+                                const imageName = e.target.value.replace("C:\\fakepath\\", "../../public/media/");
+                                setProduct({ ...product!, image: imageName });
+                            }}
                             className="form-control mb-3"
                         />
 
@@ -125,7 +136,7 @@ const AddProductPage = () => {
                 </div>
 
                 <div className="row-auto d-flex justify-content-center gap-3 mt-4 mb-1">
-                    <button className="btn btn-secondary" type="reset">Cancelar</button>
+                    <button className="btn btn-secondary" type="reset" onClick={() => window.location.reload()}>Cancelar</button>
                     <button type="submit" className="b_custom">Agregar Producto</button>
                 </div>
             </form>

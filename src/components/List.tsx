@@ -1,5 +1,6 @@
 import { Product } from "my-types";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 interface ListProps {
   products: Array<Product>;
@@ -7,6 +8,7 @@ interface ListProps {
 }
 
 export default function List({ products, onDelete }: ListProps) {
+  const { userId } = useParams();
 
   return (
     <>
@@ -14,7 +16,7 @@ export default function List({ products, onDelete }: ListProps) {
         <div key={index} className="d-flex producto mx-4 mb-4 p-3 rounded">
           <img src={producto.image}
             alt={producto.title}
-            className="img-fluid" width="500px" />
+            className="img-fluid" width="400px" />
           <div className="flex-grow-1 d-flex flex-column justify-content-between ps-3">
             <h2 className="mt-3">
               <Link to ={`/product/${producto.id}`} className="link">
@@ -36,8 +38,22 @@ export default function List({ products, onDelete }: ListProps) {
           <div className="d-flex flex-column align-items-center">
             <button
               className="btn mb-5 mt-5"
+<<<<<<< HEAD
               onClick={() => (window.location.href = `/modify-product/${producto.id}`)}
             >
+=======
+              onClick={() => {
+                console.log(window.location.pathname);
+
+                if (window.location.pathname == "/products"){
+                  window.location.href = `/modify-product/${producto.id}`;
+                }
+                else if (window.location.pathname == `/artists/productByAuthor/${userId}`){
+                  window.location.href = `/modify-product/${producto.id}`;
+                }
+                
+                }}>
+>>>>>>> 6b4e6ed61c6d72f4b24e8f6c54dff16e635491a7
               Modificar
             </button>
             <button className="btn" onClick={() => onDelete(producto.id, producto.title)}>
