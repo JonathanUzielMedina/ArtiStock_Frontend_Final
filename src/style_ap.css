@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Gothic+A1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+html {
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 16px;
+    color: #222;
+}
+
+.pMisProductos main {
+    background-color: #3B3F41;
+}
+
+body{
+    /*background-color: #137A7F;*/
+    background-color: #373B3E;
+    height: 100%;
+}
+
+h1, .title{
+    font-family: 'Gothic A1',
+    sans-serif;
+    font-weight: bold;
+    color: #E12885
+}
+
+ .subtitle{
+    font-family: 'Gothic A1',
+    sans-serif;
+    font-weight: normal;
+    color: #137A7F
+}
+
+h2{
+    font-family: 'Gothic A1',
+    sans-serif;
+    font-weight: bolder;
+}
+
+#header_bar{
+    background-color: #F1F1F1;
+    border-bottom: #E12885 5px solid;
+}
+
+.form-label{
+    color:#F1F1F1;
+}
+
+ nav ul{
+    font-family: "Gothic A1";
+    color: #373B3E;
+
+}
+
+
+.searchbar{
+    background-color: #137A7F ;
+}
+
+
+.searchbar input{
+    font-size: 16px;
+    color: #F1F1F1;
+}
+
+.searchbar button img{
+   width: 20px;
+   height: 20px;
+   border: none;
+   outline: none;
+   filter: brightness(0)invert(1);
+}
+
+.searchbar input::placeholder {
+    color: #F1F1F1; 
+}
+
+footer {
+    background-color: #222324;
+    color: #86CECB;
+}
+
+#polit {
+    color: #86CECB
+}
+
+#button {
+    background-color: #137A7F;
+    color: #F1F1F1;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.b_custom {
+    background-color: #E12885; 
+    color: #F1F1F1; 
+    border-radius: 5px;
+    border: 0px;
+}
+
+.b_custom:hover{
+    background-color: #cc2076; 
+    color: #F1F1F1; 
+}
+
+.producto {
+    background-color: #F1F1F1;
+}
+
+.producto button {
+    background-color: #137A7F;  
+    color: #F1F1F1; 
+    font-size: 14px; 
+}
+
+.producto .tags li {
+    background-color: #137A7F;  
+    color: #F1F1F1;        
+    padding: 8px 15px;       
+    font-size: 14px;   
+    border-radius: 5px; 
+    cursor: pointer;   
+}
+
+.filter, h1,h2,h3{
+    font-family: 'Gothic A1',
+    sans-serif;
+    font-weight: bold;
+    color: #137A7F
+}
+
+.link {
+    font-family: 'Gothic A1', sans-serif;
+    color: #373B3E;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    color: #137A7F;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+  }
