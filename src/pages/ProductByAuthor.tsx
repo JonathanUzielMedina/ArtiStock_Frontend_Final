@@ -1,4 +1,4 @@
-import { Product, User } from "my-types";
+import { Product} from "my-types";
 import { getProductsByUserId, deleteProduct } from "../api/ProductAPI";
 import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
