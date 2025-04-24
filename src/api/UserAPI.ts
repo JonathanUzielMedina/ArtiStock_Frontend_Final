@@ -53,6 +53,7 @@ export const deleteUser = async (id: number) => {
     }
 }
 
+// Obtener información básica del usuario.
 export const getAllUsersBasic = async() => {
     try {
         const res = await api.get("/user/basic");
@@ -64,6 +65,7 @@ export const getAllUsersBasic = async() => {
     }
 }
 
+// Obtener nombre de usuario por su ID.
 export const getUserNameById = async(id: number) => {
     try {
         const res = await api.get(`/user/username/${id}`);
