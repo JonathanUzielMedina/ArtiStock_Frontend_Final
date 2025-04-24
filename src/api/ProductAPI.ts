@@ -65,7 +65,7 @@ export const getAllProductsGraph = async () => {
   };
 
 
-  // Obtener datos de productos de un solo usuario
+  // Obtener datos de productos de un solo usuario.
 export const getProductsByUserId = async (userId:number) => {
     try {
       const res = await api.get(`/product/userId/${userId}`);
