@@ -3,6 +3,10 @@ import { createProduct } from '../api/ProductAPI';
 import { createTag } from '../api/CategoryAPI';
 import { Product, Tag } from 'my-types';
 
+interface ProductToSend extends Omit<Product, 'tags'> {
+    tags: number[];
+  }
+
 const AddProductPage = () => {
     const [product, setProduct] = useState<Product>({
         id: 0,
@@ -19,19 +23,23 @@ const AddProductPage = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
+            let tagIds: number[] = [];
             for (let i = 0; i < product!.tags.length; i++) {
                 try {
-                    await createTag({ name: product!.tags[i].name });
+                    const newTag =  await createTag({ name: product!.tags[i].name });
+                    tagIds.push(newTag.payload.id);
                 } catch (error) {
                     console.warn(`Error creando tag: ${product?.tags[i].name}`, error);
                 }
             }
-            console.log("Producto a enviar:", product);
-            await createProduct(product);
-            alert("Producto agregado con éxito");
+            const productToSend: ProductToSend = {...product, tags: tagIds};
+            console.log("Producto que se enviará:", productToSend);
+            await createProduct(productToSend as any);
+            alert("Producto creado con éxito");
+            window.location.reload();
         } catch (error) {
             console.error("Error al crear el producto:", error);
-            alert("Producto creado con éxito");
+            alert("Error al crear producto");
         }
     };
 
