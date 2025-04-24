@@ -1,7 +1,7 @@
 
 import { User } from "my-types";
 import { useState, useEffect } from "react";
-import { getUserById } from "../api/UserAPI";
+import { getUserById, deleteUser } from "../api/UserAPI";
 import "../style_ap.css";
 import imgPerfil from "../../public/media/perfil.png"
 import { useParams } from "react-router";
@@ -12,7 +12,7 @@ const UserProfilePage = (_props: Props) => {
   const {id} = useParams();
 
   // Estado del componente.
-  const [user, setUser] = useState<User | null>();
+  const [user, setUser] = useState<User | null>(null);
 
   // Eventos del componente
   useEffect(() => {
@@ -30,6 +30,14 @@ const UserProfilePage = (_props: Props) => {
     }, [id]);
 
     if (!user) return;
+
+    const handleDelete = async (id: number) => {
+      const confirmDelete = confirm(`¿Estás seguro de que quieres eliminar a este usuario?`);
+      if (!confirmDelete) return;
+    
+      await deleteUser(id);
+      window.location.href = '/';
+    };
 
   return (
     <div className="pt-5 container-fluid">
@@ -51,8 +59,8 @@ const UserProfilePage = (_props: Props) => {
                         <button id="button" className="btn mt-3" onClick={() => (window.location.href = `/modify-user/${user?.id}`)}>
                             Modificar Perfil
                         </button>
-                        <button id="button" className="btn mt-3 ms-md-3" onClick={() => (window.location.href = `/`)}>
-                            Cerrar Sesión
+                        <button id="button" className="btn mt-3 ms-md-3" onClick={() => handleDelete(user.id)}>
+                            Borrar Usuario
                         </button>
                     </div>
                 </div>
