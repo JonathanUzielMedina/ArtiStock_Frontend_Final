@@ -1,5 +1,5 @@
 
-import { User, Product } from "my-types";
+import { User } from "my-types";
 import { useState, useEffect } from "react";
 import { getUserById } from "../api/UserAPI";
 import "../style_ap.css";
