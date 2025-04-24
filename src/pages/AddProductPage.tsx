@@ -136,7 +136,7 @@ const AddProductPage = () => {
                 </div>
 
                 <div className="row-auto d-flex justify-content-center gap-3 mt-4 mb-1">
-                    <button className="btn btn-secondary" type="reset">Cancelar</button>
+                    <button className="btn btn-secondary" type="reset" onClick={() => window.location.reload()}>Cancelar</button>
                     <button type="submit" className="b_custom">Agregar Producto</button>
                 </div>
             </form>
