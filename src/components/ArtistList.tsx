@@ -11,8 +11,8 @@ export default function ArtistList({ users }: Props) {
       <div className="row p-3 m-1 d-flex">
       {users.map((user, index) => (
         <div key={index} className="col-12 col-md-6 col-lg-4 mt-2 mb-4">
-          <div className="card text-center h-100">
-          <img className="card-img-top"
+          <div className="card text-center h-100 justify-content-center">
+          <img className="card-img-top align-self-center w-auto"
                 src={user.profilePic}
                 alt={user.name}
                 style={{ width: "200px", height: "200px" }}

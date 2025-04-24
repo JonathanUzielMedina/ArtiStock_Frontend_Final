@@ -53,11 +53,24 @@ export const deleteUser = async (id: number) => {
     }
 }
 
+// Obtener información básica del usuario.
 export const getAllUsersBasic = async() => {
     try {
         const res = await api.get("/user/basic");
         const users: User[] = await res.data.payload;
         return users;
+    } catch(e) {
+        console.log("Error al obtener todos los usuarios: ", e);
+        return [];
+    }
+}
+
+// Obtener nombre de usuario por su ID.
+export const getUserNameById = async(id: number) => {
+    try {
+        const res = await api.get(`/user/username/${id}`);
+        const username: User = await res.data.payload;
+        return username;
     } catch(e) {
         console.log("Error al obtener todos los usuarios: ", e);
         return [];

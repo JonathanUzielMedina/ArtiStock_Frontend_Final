@@ -15,7 +15,7 @@ const AddProductPage = () => {
         price: 0,
         stock: 0,
         image: '',
-        userId: 2,
+        userId: 1,
         tags: [],
         user: {} as any,
     });

@@ -109,7 +109,7 @@ const ModifyProductPage = (_props: Props) => {
                 
                 <div className="row-auto d-flex justify-content-center gap-3 mt-4 mb-1">
                     {/* reset es para que no envie los datos, sino que regrese a los valores iniciales */}
-                    <button className="btn btn-secondary" type="reset" onClick={() => window.location.href = `/products/${product?.id}`}>
+                    <button className="btn btn-secondary" type="reset" onClick={() => window.location.href = `/modify-product/${product?.id}`}>
                         Cancelar
                     </button>
                     <button type="submit" className="b_custom px-3">
