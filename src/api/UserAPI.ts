@@ -45,7 +45,7 @@ export const updateUser = async(id: number, _prop: User | undefined): Promise<vo
 }
 
 // Borrar un usuario por su ID.
-export const deleteUser = async (id: number): Promise<void> => {
+export const deleteUser = async (id: number) => {
     try {
         await api.delete(`/user/${id}`);
     } catch(e) {
