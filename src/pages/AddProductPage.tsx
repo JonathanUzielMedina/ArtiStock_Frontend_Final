@@ -28,10 +28,10 @@ const AddProductPage = () => {
             }
             console.log("Producto a enviar:", product);
             await createProduct(product);
-            alert("Producto agregado con éxito");
+            alert("Producto agregado con éxito.");
         } catch (error) {
             console.error("Error al crear el producto:", error);
-            alert("Producto creado con éxito");
+            alert("No se pudo agregar el producto.");
         }
     };
 
@@ -108,7 +108,10 @@ const AddProductPage = () => {
                         <input
                             type="file"
                             name="imgSRC"
-                            onChange={(e) => setProduct({ ...product!, image: e.target.value })}
+                            onChange={(e) => {
+                                const imageName = e.target.value.replace("C:\\fakepath\\", "../../public/media/");
+                                setProduct({ ...product!, image: imageName });
+                            }}
                             className="form-control mb-3"
                         />
 

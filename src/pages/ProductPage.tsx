@@ -44,11 +44,11 @@ const ProductPage = (_props: Props) => {
       
         <div className="px-4 py-2 border-b-slate-400 border-b-2">
           <div className="d-flex justify-content-center align-content-center">
-          <h1 className="text-lg font-medium title">Mis Productos</h1>
+          <h1 className="text-lg font-medium title">Productos</h1>
           </div>
           <div className="d-flex justify-content-end pt-2">
-          <button id="button" className="btn " onClick={() => (window.location.href = "/add-product/")}>
-            Agregar Producto
+            <button id="button" className="btn " onClick={() => (window.location.href = "/add-product/")}>
+              Agregar Producto
             </button>
           </div>
         </div>

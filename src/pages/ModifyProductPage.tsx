@@ -18,16 +18,22 @@ const ModifyProductPage = (_props: Props) => {
     // Eventos del componente
     useEffect(() => {
         getProductById(parseInt(id!.toString())).then((data:any) => setProduct(data));
-        
     }, []);
 
+    if (!product) return;
+
     const updateSubmit = async() => {
-        if (product?.tags !== undefined){
-            product!.tags.map((t) => {
-                updateTag(t.id, {id: t.id, name: t.name});
-            });
+        try{
+            if (product?.tags !== undefined){
+                product!.tags.map((t) => {
+                    updateTag(t.id, {id: t.id, name: t.name});
+                });
+            }
+            updateProduct(parseInt(id!.toString()), product)
+            alert("El producto se ha actualizado con éxito.");
+        }catch{
+            alert("No se logró actualizar el producto.");
         }
-        updateProduct(parseInt(id!.toString()), product)
     }
 
     return (
@@ -73,7 +79,10 @@ const ModifyProductPage = (_props: Props) => {
                     <div className="col-md-6">
                         <label className="form-label">Insertar Imagen</label>
                         <input type="file" value={""} name="imgSRC"
-                        className="form-control mb-3" onChange={(e) => setProduct({...product!, image: e.target.value})}/>
+                        className="form-control mb-3" onChange={(e) =>{
+                            const imageName = e.target.value.replace("C:\\fakepath\\", "../../public/media/");
+                            setProduct({...product!, image: imageName})
+                            }}/>
 
                         
                         <div className="mb-3">
