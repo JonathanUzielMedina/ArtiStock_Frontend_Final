@@ -27,7 +27,7 @@ function Header(){
                                 <div className="container justify-content-center">
                                     <ul className="navbar-nav">
                                         <li className="nav-item active mx-3">
-                                            <Link to="/users" className="nav-link text-dark"> Artistas</Link>
+                                            <Link to="/artists" className="nav-link text-dark"> Artistas</Link>
                                         </li>
                                         <li className="nav-item active mx-3">
                                             <Link to="/products" className="nav-link text-dark text-center">Productos</Link>

@@ -11,7 +11,6 @@ interface Props {}
 const ProductPage = (_props: Props) => {
   //Filtro
   const [name, setName] = useState<string>("");
-  //falta tags
 
   // Estado del componente.
   const [products, setProducts] = useState<Product[]>([]);
@@ -53,7 +52,7 @@ const ProductPage = (_props: Props) => {
           </div>
         </div>
 
-        <Filter name={name} setName={setName} />
+        <Filter filterby="title" name={name} setName={setName} />
 
         <List products={filteredProducts} onDelete={handleDelete}/>
     </div>

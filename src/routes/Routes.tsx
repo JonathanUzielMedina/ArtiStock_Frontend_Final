@@ -9,6 +9,8 @@ import OneProduct from "../pages/OneProduct";
 import GraphPage from "../pages/GraphPage";
 import UserProfilePage from "../pages/UserProfilePage";
 import WelcomePage from "../pages/WelcomePage";
+import ArtistsPage from "../pages/ArtistsPage";
+import ProductByAuthor from "../pages/ProductByAuthor";
 
 const router = createBrowserRouter([
     {
@@ -58,6 +60,16 @@ const router = createBrowserRouter([
             {
                 path:"/graph",
                 element: <GraphPage />,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path:"/artists",
+                element:<ArtistsPage />,
+                errorElement: <ErrorPage />
+            },
+            {
+                path:"/artists/productByAuthor/:userId",
+                element: <ProductByAuthor />,
                 errorElement: <ErrorPage/>
             },
         ],
