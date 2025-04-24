@@ -7,6 +7,8 @@ import ModifyUserPage from "../pages/ModifyUserPage";
 import AddProductPage from "../pages/AddProductPage";
 import OneProduct from "../pages/OneProduct";
 import GraphPage from "../pages/GraphPage";
+import ArtistsPage from "../pages/ArtistsPage";
+import ProductByAuthor from "../pages/ProductByAuthor";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +48,16 @@ const router = createBrowserRouter([
             {
                 path:"/graph",
                 element: <GraphPage />,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path:"/artists",
+                element:<ArtistsPage />,
+                errorElement: <ErrorPage />
+            },
+            {
+                path:"/artists/productByAuthor/:userId",
+                element: <ProductByAuthor />,
                 errorElement: <ErrorPage/>
             },
         ],

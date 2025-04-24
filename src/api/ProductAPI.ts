@@ -21,7 +21,7 @@ export const getProductById = async(id: number) => {
         return product;
     } catch(e) {
         console.log("Error al obtener la información del producto:", e);
-        return [];
+        return null;
     }
 }
 
@@ -57,6 +57,18 @@ export const deleteProduct = async (id: number): Promise<void> => {
 export const getAllProductsGraph = async () => {
     try {
       const res = await api.get("/product/graph");
+      const products: Product[] = await res.data.payload;
+      return products;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
+  // Obtener datos de productos de un solo usuario
+export const getProductsByUserId = async (userId:number) => {
+    try {
+      const res = await api.get(`/product/userId/${userId}`);
       const products: Product[] = await res.data.payload;
       return products;
     } catch (err) {
