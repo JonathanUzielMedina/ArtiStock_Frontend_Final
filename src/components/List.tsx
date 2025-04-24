@@ -36,7 +36,7 @@ export default function List({ products, onDelete }: ListProps) {
           <div className="d-flex flex-column align-items-center">
             <button
               className="btn mb-5 mt-5"
-              onClick={() => (window.location.href = `modify-product/${producto.id}`)}
+              onClick={() => (window.location.href = `/modify-product/${producto.id}`)}
             >
               Modificar
             </button>
