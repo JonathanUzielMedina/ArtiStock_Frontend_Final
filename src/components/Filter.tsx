@@ -8,7 +8,7 @@ type Props = {
     return (
       <>
         <div className="px-4 py-3 border-b-slate-400 border-b-2 filter">
-          <h3 className="text-md font-medium mb-2 text-gray-600">Filter</h3>
+          <h3 className="text-md font-medium mb-2 text-gray-600">Filtro</h3>
           <div className="flex space-x-4">
             <div className="w-full ">
               <label className="block text-sm font-medium text-gray-600 m-2">
@@ -17,7 +17,7 @@ type Props = {
               <input
                 type="text"
                 className="border rounded-md px-3 py-2 w-full"
-                placeholder="Escribe aqui"
+                placeholder="Escribe aquí"
                 value={props.name}
                 onChange={(e) => props.setName(e.target.value)}
               />

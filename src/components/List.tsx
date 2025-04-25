@@ -21,7 +21,7 @@ export default function List({ products, onDelete }: ListProps) {
               {producto.title}
               </Link>
             </h2>
-            <p>{producto.price} MXN</p>
+            <p>$ {producto.price} MXN</p>
             <p>{producto.description}</p>
             {producto.tags && producto.tags.length > 0 && (
               <ul className="tags list-unstyled d-flex flex-wrap gap-2">
