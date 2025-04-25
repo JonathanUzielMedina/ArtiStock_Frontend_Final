@@ -52,7 +52,7 @@ const ProductPage = (_props: Props) => {
           </div>
         </div>
 
-        <Filter filterby="title" name={name} setName={setName} />
+        <Filter filterby="Título" name={name} setName={setName} />
 
         <List products={filteredProducts} onDelete={handleDelete}/>
     </div>

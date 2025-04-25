@@ -106,7 +106,7 @@ const AddProductPage = () => {
                                 }
                                 }
                                 className="form-control"
-                                placeholder="Ej: medicina, salud"
+                                placeholder="Ej: óleo, pintura"
                             />
                         </div>
                     </div>

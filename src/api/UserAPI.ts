@@ -27,11 +27,11 @@ export const getAllUsers = async() => {
 export const getUserById = async(id: number) => {
     try {
         const res = await api.get(`/user/${id}`);
-        const user: User[] = await res.data.payload;
+        const user: User = await res.data.payload;
         return user;
     } catch(e) {
         console.log("Error al obtener información del usuario: ", e);
-        return [];
+        return null;
     }
 }
 
@@ -73,6 +73,6 @@ export const getUserNameById = async(id: number) => {
         return username;
     } catch(e) {
         console.log("Error al obtener todos los usuarios: ", e);
-        return [];
+        return null;
     }
 }

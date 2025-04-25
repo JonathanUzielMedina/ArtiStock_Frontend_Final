@@ -29,7 +29,7 @@ const ArtistsPage = () => {
         <h1 className="text-lg font-medium title">Artistas</h1>
       </div>
       <div>
-        <Filter filterby={"name"} name={name} setName={setName} />
+        <Filter filterby={"Nombre"} name={name} setName={setName} />
         <ArtistList users={filteredUsers} />
         </div>
     </>

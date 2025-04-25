@@ -9,7 +9,7 @@ function Header(){
             <div className="container-fluid">
                 <div id="header_bar" className="row d-flex align-items-center justify-content-between w-100 top-0 start-0 gx-0">
                     <div id="logo" className="col-md-2 d-flex justify-content-center"> 
-                        <img src={logo} alt="Logo" className="img-fluid"/>
+                        <img src={logo} alt="ArtiStock Logo" className="img-fluid"/>
                     </div>
                     <div className="col-12 col-md-8">
                         <div className="row">
